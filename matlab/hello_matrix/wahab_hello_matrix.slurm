@@ -6,8 +6,10 @@
 #SBATCH -o %x.out%j
 #
 # A sample MATLAB job on Wahab
+# Updated Aug 2023 to conform to the new containerized software practice
+# on Wahab cluster.
 
-module load matlab/R2019b
+module load container_env matlab/R2022a
 #module list
 
-matlab -nodisplay -nodesktop -r "hello_matrix, exit"
+crun.matlab  matlab -nodisplay -nodesktop -r "hello_matrix, exit"
