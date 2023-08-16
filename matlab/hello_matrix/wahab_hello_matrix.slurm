@@ -12,4 +12,4 @@
 module load container_env matlab/R2022a
 #module list
 
-crun.matlab  matlab -nodisplay -nodesktop -r "hello_matrix, exit"
+crun.matlab  matlab -nodisplay -nodesktop -r hello_matrix
