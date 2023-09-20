@@ -4,12 +4,11 @@
 #SBATCH -c 1
 #SBATCH -J Inc_Laminar_Cavity_par8
 #SBATCH -t 2:00:00
-#SBATCH -o Inc_Laminar_Cavity_par8.out
+#SBATCH -o Inc_Laminar_Cavity_par8.out%j
 
 # Source of input files:
 # https://github.com/su2code/Tutorials/blob/master/incompressible_flow/Inc_Laminar_Cavity/lam_buoyancy_cavity.cfg
 
-enable_lmod
 module load container_env su2/7.0.7 slurm
 
 echo "SU2 CFD simulation of incompressible laminar flow"
