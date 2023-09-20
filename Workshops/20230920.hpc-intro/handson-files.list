@@ -1,0 +1,9 @@
+python/README-pi.md
+python/pi-parallel/pi-mpi-minimal.py
+python/pi-parallel/pi-mpi.py
+python/pi-parallel/run-pi-minimal.slurm
+python/pi-parallel/run-pi.slurm
+python/pi-serial/pi-serial-minimal.py
+python/pi-serial/pi-serial.py
+python/pi-serial/run-pi-minimal.slurm
+python/pi-serial/run-pi.slurm
