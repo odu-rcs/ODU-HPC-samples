@@ -1,0 +1,17 @@
+#!/bin/bash -l
+#
+#SBATCH --job-name Test_NN_512x512_1gpu_v03
+#SBATCH --output out/%x-cont.out%j
+#SBATCH --nodes 1
+#SBATCH --partition timed-gpu
+#SBATCH --gres gpu:1
+
+module load container_env tensorflow-gpu/2.2.0
+
+#echo "SLURM_JOB_ID = $SLURM_JOB_ID"
+export | grep 'declare -x SLURM_'
+echo
+module list
+
+echo 'Using official tensorflow-gpu'
+time  crun.tensorflow-gpu  python3  Test_NN_512x512_1gpu_v03.py
