@@ -1,0 +1,170 @@
+declare -x SLURM_CLUSTER_NAME="(null)"
+declare -x SLURM_CONF="/var/spool/slurmd/conf-cache/slurm.conf"
+declare -x SLURM_CPUS_ON_NODE="1"
+declare -x SLURM_GPUS_ON_NODE="1"
+declare -x SLURM_GTIDS="0"
+declare -x SLURM_JOBID="4319451"
+declare -x SLURM_JOB_ACCOUNT="odu"
+declare -x SLURM_JOB_CPUS_PER_NODE="1"
+declare -x SLURM_JOB_END_TIME="1740502113"
+declare -x SLURM_JOB_GID="14514"
+declare -x SLURM_JOB_GPUS="3"
+declare -x SLURM_JOB_ID="4319451"
+declare -x SLURM_JOB_NAME="Test_NN_512x512_1gpu_v03"
+declare -x SLURM_JOB_NODELIST="d4-w4140b-01"
+declare -x SLURM_JOB_NUM_NODES="1"
+declare -x SLURM_JOB_PARTITION="timed-gpu"
+declare -x SLURM_JOB_QOS="normal"
+declare -x SLURM_JOB_START_TIME="1740494913"
+declare -x SLURM_JOB_UID="449753"
+declare -x SLURM_JOB_USER="wpurwant"
+declare -x SLURM_LOCALID="0"
+declare -x SLURM_NNODES="1"
+declare -x SLURM_NODEID="0"
+declare -x SLURM_NODELIST="d4-w4140b-01"
+declare -x SLURM_PRIO_PROCESS="0"
+declare -x SLURM_PROCID="0"
+declare -x SLURM_ROOT="/cm/shared/applications/slurm/23.11.3"
+declare -x SLURM_SUBMIT_DIR="/home/wpurwant/HPC/ODU-HPC-samples/tf-keras"
+declare -x SLURM_SUBMIT_HOST="wahab-01"
+declare -x SLURM_TASKS_PER_NODE="1"
+declare -x SLURM_TASK_PID="843802"
+declare -x SLURM_TOPOLOGY_ADDR="d4-w4140b-01"
+declare -x SLURM_TOPOLOGY_ADDR_PATTERN="node"
+
+
+Currently Loaded Modules:
+  1) slurm/23.11   2) container_env/0.1   3) tensorflow-gpu/2.6.0
+
+ 
+
+Using official tensorflow-gpu
+2025-02-25 09:48:45.344015: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-02-25 09:48:53.633028: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1510] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14635 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:1e:00.0, compute capability: 7.0
+Pandas version: 1.2.0
+Scikit-learn version:  1.0.2
+OMP_NUM_THREADS =  1
+
+Physical devices:
+[PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+
+Logical devices:
+[LogicalDevice(name='/device:CPU:0', device_type='CPU'), LogicalDevice(name='/device:GPU:0', device_type='GPU')]
+------------
+* shape: (273129, 20)
+* columns::
+ ['Unnamed: 0', 'ApplicationName', 'CPU_USAGE', 'UidRxBytes', 'UidRxPackets', 'UidTxBytes', 'UidTxPackets', 'cutime', 'guest_time', 'importance', 'lru', 'num_threads', 'otherPrivateDirty', 'priority', 'rss', 'state', 'stime', 'utime', 'vsize', 'cminflt']
+
+* info::
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 273129 entries, 0 to 273128
+Data columns (total 20 columns):
+ #   Column             Non-Null Count   Dtype  
+---  ------             --------------   -----  
+ 0   Unnamed: 0         273129 non-null  int64  
+ 1   ApplicationName    273129 non-null  object 
+ 2   CPU_USAGE          273077 non-null  float64
+ 3   UidRxBytes         273129 non-null  int64  
+ 4   UidRxPackets       273129 non-null  int64  
+ 5   UidTxBytes         273129 non-null  int64  
+ 6   UidTxPackets       273129 non-null  int64  
+ 7   cutime             273077 non-null  float64
+ 8   guest_time         273077 non-null  float64
+ 9   importance         273129 non-null  int64  
+ 10  lru                273129 non-null  int64  
+ 11  num_threads        273077 non-null  float64
+ 12  otherPrivateDirty  273129 non-null  int64  
+ 13  priority           273077 non-null  float64
+ 14  rss                273077 non-null  float64
+ 15  state              273077 non-null  object 
+ 16  stime              273077 non-null  float64
+ 17  utime              273077 non-null  float64
+ 18  vsize              273077 non-null  float64
+ 19  cminflt            0 non-null       float64
+dtypes: float64(10), int64(8), object(2)
+memory usage: 41.7+ MB
+
+* describe::
+
+          Unnamed: 0      CPU_USAGE  ...         vsize  cminflt
+count  273129.000000  273077.000000  ...  2.730770e+05      0.0
+mean   528153.204665       0.661832  ...  2.049264e+09      NaN
+std    287688.920866       3.207833  ...  1.179834e+08      NaN
+min         0.000000       0.000000  ...  0.000000e+00      NaN
+25%    280651.000000       0.050000  ...  1.958326e+09      NaN
+50%    551938.000000       0.130000  ...  2.026893e+09      NaN
+75%    783978.000000       0.370000  ...  2.125877e+09      NaN
+max    999994.000000     110.890000  ...  2.456613e+09      NaN
+
+[8 rows x 18 columns]
+
+Preprocessing:
+- dropped 3 columns: ['Unnamed: 0', 'cminflt', 'guest_time']
+- remaining missing data:
+CPU_USAGE      52
+cutime         52
+num_threads    52
+priority       52
+rss            52
+state          52
+stime          52
+utime          52
+vsize          52
+dtype: int64
+- dropping the rest of missing data
+- remaining shape: (273077, 17)
+
+Step: Converting all non-numerical features to one-hot encoding.
+Non-numeric features:
+- O  state
+
+Step: Feature scaling with StandardScaler
+After scaling:
+   CPU_USAGE  UidRxBytes  UidRxPackets  ...   state_R   state_S  state_Z
+0  -0.165792   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+1   0.308049   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+2  -0.140853   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+3  -0.196966   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+4  -0.143970   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+5  -0.047332   -0.003421      0.092426  ... -0.060473  0.064346 -0.00789
+6  -0.196966   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+7  -0.200083   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+8  -0.181379   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+9  -0.206318   -0.010623     -0.015068  ... -0.060473  0.064346 -0.00789
+
+[10 rows x 19 columns]
+
+Step: Train-test split  test_size=0.2  random_state=34
+- training dataset: 218461 records
+- testing dataset:  54616 records
+2025-02-25 09:48:56.199831: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+
+Training neural network model now...
+Epoch 1/10
+6827/6827 - 25s - loss: 0.1563 - accuracy: 0.9613 - val_loss: 0.0352 - val_accuracy: 0.9895
+Epoch 2/10
+6827/6827 - 15s - loss: 0.0214 - accuracy: 0.9947 - val_loss: 0.0195 - val_accuracy: 0.9960
+Epoch 3/10
+6827/6827 - 14s - loss: 0.0119 - accuracy: 0.9970 - val_loss: 0.0209 - val_accuracy: 0.9947
+Epoch 4/10
+6827/6827 - 15s - loss: 0.0081 - accuracy: 0.9979 - val_loss: 0.0074 - val_accuracy: 0.9985
+Epoch 5/10
+6827/6827 - 15s - loss: 0.0065 - accuracy: 0.9984 - val_loss: 0.0073 - val_accuracy: 0.9984
+Epoch 6/10
+6827/6827 - 14s - loss: 0.0059 - accuracy: 0.9985 - val_loss: 0.0053 - val_accuracy: 0.9986
+Epoch 7/10
+6827/6827 - 14s - loss: 0.0047 - accuracy: 0.9988 - val_loss: 0.0195 - val_accuracy: 0.9953
+Epoch 8/10
+6827/6827 - 15s - loss: 0.0048 - accuracy: 0.9987 - val_loss: 0.0043 - val_accuracy: 0.9991
+Epoch 9/10
+6827/6827 - 15s - loss: 0.0042 - accuracy: 0.9989 - val_loss: 0.0041 - val_accuracy: 0.9992
+Epoch 10/10
+6827/6827 - 14s - loss: 0.0043 - accuracy: 0.9990 - val_loss: 0.0079 - val_accuracy: 0.9990
+/opt/conda/lib/python3.7/site-packages/keras/optimizer_v2/optimizer_v2.py:356: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
+  "The `lr` argument is deprecated, use `learning_rate` instead.")
+
+real	3m0.443s
+user	2m24.558s
+sys	0m20.564s
