@@ -5,11 +5,20 @@
 #SBATCH --nodes 1
 #SBATCH --partition timed-gpu
 #SBATCH --gres gpu:1
+#
+# This is a basic example of running a GPU job
+# to train a neural network model using Keras
+# and TensorFlow.
+#
+# This script is configured to run on ODU's Wahab and Turing clusters.
+# Running the same training on other cluster will require adjustments
+# on this script.
+#
 
-module load container_env tensorflow-gpu/2.2.0
+module load container_env tensorflow-gpu/2.6.0
 
-#echo "SLURM_JOB_ID = $SLURM_JOB_ID"
-export | grep 'declare -x SLURM_'
+# Optional: Show the SLURM variables for debugging
+export | grep '^declare -x SLURM_'
 echo
 module list
 
