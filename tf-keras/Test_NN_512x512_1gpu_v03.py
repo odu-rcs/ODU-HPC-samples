@@ -59,7 +59,16 @@ print(tf.config.list_logical_devices())
 
 print("------------")
 
-df = pd.read_csv("sherlock_apps_yhe_test.csv")
+# The file path location if running on Wahab HPC cluster:
+df = pd.read_csv("/scratch/Workshops/DeapSECURE/module-nn/Exercises/sherlock/sherlock_18apps.csv")
+
+# If the location above is not available, i.e. your run threw
+# an exception "FileNotFoundError: [Errno 2] No such file or directory",
+# then comment the line above and uncomment below.
+# But you must unpack the compressed file ("data/sherlock_18apps.csv.xz")
+# using `unxz` command first before running:
+#df = pd.read_csv("data/sherlock_18apps.csv")
+
 summarize_dataset(df)
 df2 = preprocess_sherlock_19F17C(df)
 
@@ -92,7 +101,7 @@ def NN_Model(hidden_neurons,learning_rate):
         Dense(hidden_neurons, activation='relu',input_shape=(19,),kernel_initializer='random_normal'),
         Dense(18, activation='softmax')
     ])
-    adam=tf.keras.optimizers.Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, amsgrad=False)
+    adam=tf.keras.optimizers.Adam(learning_rate=learning_rate, beta_1=0.9, beta_2=0.999, amsgrad=False)
     model.compile(optimizer=adam,
               loss='categorical_crossentropy',
               metrics=['accuracy'])
