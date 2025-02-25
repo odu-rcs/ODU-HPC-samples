@@ -9,6 +9,7 @@ WORKSHOP_DEST_DIR=/cm/shared/workshops/intro-to-hpc/20230920.hpc-intro
 # all the workshop hands-on files (FIXME make this movable)
 SRC_DIR=/home/wpurwant/ODU-HPC-samples
 
+WORKSHOP_SRC_DIR="$SRC_DIR/Workshops/20230920.hpc-intro"
 SRC_LIST_FILE="$SRC_DIR/Workshops/20230920.hpc-intro/handson-files.list"
 
 
@@ -16,6 +17,10 @@ SRC_LIST_FILE="$SRC_DIR/Workshops/20230920.hpc-intro/handson-files.list"
 _sync_orig_files () {
     rsync -a -v --update "$SRC_DIR/."  "$WORKSHOP_DEST_DIR/." \
           --files-from="$SRC_LIST_FILE"
+}
+
+_deploy_READMEs () {
+    rsync -a -v --update "$WORKSHOP_SRC_DIR/README.md"  "$WORKSHOP_DEST_DIR/."
 }
 
 
@@ -37,6 +42,7 @@ _reorg_python_pi () {
 main1 () {
     set -x
     _sync_orig_files
+    _deploy_READMEs
     _reorg_python_pi
 }
 
