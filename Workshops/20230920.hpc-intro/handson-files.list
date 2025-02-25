@@ -7,3 +7,5 @@ python/pi-serial/pi-serial-minimal.py
 python/pi-serial/pi-serial.py
 python/pi-serial/run-pi-minimal.slurm
 python/pi-serial/run-pi.slurm
+R/pi-serial/calc-pi.R
+R/pi-serial/calc-pi.slurm
